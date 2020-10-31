@@ -47,25 +47,10 @@ class ListProducts extends StatelessWidget {
                     return ActionModalBottomSheet(
                       typeAction: TypeAction.DeleteAndEdit,
                       align: WrapAlignment.center,
-                      onDelete: () async {
-                        context.read(globalLoading).state = true;
-                        try {
-                          final result =
-                              await context.read(productProvider).delete(product.idProduct);
-
-                          await GlobalFunction.showToast(
-                              message: result, toastType: ToastType.Error);
-                          Future.delayed(Duration(milliseconds: 800), () {
-                            Navigator.of(context).pop();
-                          });
-                        } catch (e) {
-                          await GlobalFunction.showToast(
-                            message: e.toString(),
-                            toastType: ToastType.Error,
-                          );
-                        }
-                        context.read(globalLoading).state = false;
-                      },
+                      onDelete: () async => await RequestFunction.deleteProduct(
+                        context,
+                        idProduct: product.idProduct,
+                      ),
                       onEdit: () => showModalBottomSheet(
                         context: context,
                         isScrollControlled: true,
@@ -93,60 +78,21 @@ class ListProducts extends StatelessWidget {
                             icon: Icons.camera_alt,
                             backgroundColor: colorPallete.primaryColor,
                             foregroundColor: colorPallete.white,
-                            onTap: () async {
-                              context.read(globalLoading).state = true;
-                              try {
-                                final image = await CommonFunction.pickImage(
-                                  returnFile: ReturnFile.BASE64,
-                                );
-                                if (image != null) {
-                                  final result = await context.read(productProvider).updateImage(
-                                        product.idProduct,
-                                        image: image,
-                                      );
-                                  await GlobalFunction.showToast(
-                                    message: result,
-                                    toastType: ToastType.Success,
-                                  );
-                                }
-                              } catch (e) {
-                                await GlobalFunction.showToast(
-                                  message: e.toString(),
-                                  toastType: ToastType.Error,
-                                );
-                              }
-                              context.read(globalLoading).state = false;
-                            },
+                            onTap: () async => await RequestFunction.updateImageProduct(
+                              context,
+                              idProduct: product.idProduct,
+                              isCameraSource: true,
+                            ),
                           ),
                           ActionCircleButton(
                             icon: Icons.photo,
                             backgroundColor: colorPallete.accentColor,
                             foregroundColor: colorPallete.white,
-                            onTap: () async {
-                              context.read(globalLoading).state = true;
-                              try {
-                                final image = await CommonFunction.pickImage(
-                                  isCameraSource: false,
-                                  returnFile: ReturnFile.BASE64,
-                                );
-                                if (image != null) {
-                                  final result = await context.read(productProvider).updateImage(
-                                        product.idProduct,
-                                        image: image,
-                                      );
-                                  await GlobalFunction.showToast(
-                                    message: result,
-                                    toastType: ToastType.Success,
-                                  );
-                                }
-                              } catch (e) {
-                                await GlobalFunction.showToast(
-                                  message: e.toString(),
-                                  toastType: ToastType.Error,
-                                );
-                              }
-                              context.read(globalLoading).state = false;
-                            },
+                            onTap: () async => await RequestFunction.updateImageProduct(
+                              context,
+                              idProduct: product.idProduct,
+                              isCameraSource: false,
+                            ),
                           ),
                         ],
                       );

@@ -40,62 +40,19 @@ class DrawerSide extends StatelessWidget {
                                   icon: Icons.camera_alt,
                                   backgroundColor: colorPallete.primaryColor,
                                   foregroundColor: colorPallete.white,
-                                  onTap: () async {
-                                    context.read(globalLoading).state = true;
-                                    try {
-                                      final image = await CommonFunction.pickImage(
-                                        returnFile: ReturnFile.BASE64,
-                                      );
-                                      if (image != null) {
-                                        final user = context.read(userProvider.state);
-                                        final result = await context.read(userProvider).updateImage(
-                                              user.idUser,
-                                              image: image,
-                                            );
-                                        await GlobalFunction.showToast(
-                                          message: result,
-                                          toastType: ToastType.Success,
-                                        );
-                                      }
-                                    } catch (e) {
-                                      await GlobalFunction.showToast(
-                                        message: e.toString(),
-                                        toastType: ToastType.Error,
-                                      );
-                                    }
-                                    context.read(globalLoading).state = false;
-                                  },
+                                  onTap: () async => await RequestFunction.updateProfilImage(
+                                    context,
+                                    isCameraSource: true,
+                                  ),
                                 ),
                                 ActionCircleButton(
                                   icon: Icons.photo,
                                   backgroundColor: colorPallete.accentColor,
                                   foregroundColor: colorPallete.white,
-                                  onTap: () async {
-                                    context.read(globalLoading).state = true;
-                                    try {
-                                      final image = await CommonFunction.pickImage(
-                                        isCameraSource: false,
-                                        returnFile: ReturnFile.BASE64,
-                                      );
-                                      if (image != null) {
-                                        final user = context.read(userProvider.state);
-                                        final result = await context.read(userProvider).updateImage(
-                                              user.idUser,
-                                              image: image,
-                                            );
-                                        await GlobalFunction.showToast(
-                                          message: result,
-                                          toastType: ToastType.Success,
-                                        );
-                                      }
-                                    } catch (e) {
-                                      await GlobalFunction.showToast(
-                                        message: e.toString(),
-                                        toastType: ToastType.Error,
-                                      );
-                                    }
-                                    context.read(globalLoading).state = false;
-                                  },
+                                  onTap: () async => await RequestFunction.updateProfilImage(
+                                    context,
+                                    isCameraSource: false,
+                                  ),
                                 ),
                               ],
                             );

@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:global_template/global_template.dart';
 
 import '../../../functions/functions.dart';
-import '../../../network/model/models.dart';
 import '../../../providers/providers.dart';
 
 class FormProductScreen extends StatefulWidget {
@@ -136,52 +135,17 @@ class _FormProductScreenState extends State<FormProductScreen> {
                   }
                 },
                 child: ButtonCustom(
-                  onPressed: () async {
-                    if (!_formKey.currentState.validate()) {
-                      return;
-                    }
-                    context.read(globalLoading).state = true;
-                    try {
-                      final product = ProductModel(
-                        idProduct: widget.idProduct,
-                        name: nameTextController.text,
-                        price: double.tryParse(
-                          GlobalFunction.unFormatNumber(
-                            priceTextController.text,
-                          ),
-                        ),
-                        stock: int.tryParse(stockTextController.text),
-                        summary: summaryTextController.text,
-                        description: descriptionTextController.text,
-                        imageProduct: _imageBase64 ?? "",
-                      );
-
-                      String result;
-
-                      if (widget.idProduct == null) {
-                        print(product);
-                        result = await context.read(productProvider).add(product);
-                      } else {
-                        result = await context.read(productProvider).update(
-                              product.idProduct,
-                              name: product.name,
-                              price: product.price,
-                              stock: product.stock,
-                              summary: product.summary,
-                              description: product.description,
-                            );
-                      }
-                      await GlobalFunction.showToast(message: result, toastType: ToastType.Success);
-                      // await context.refresh(showProducts);
-                      Future.delayed(Duration(milliseconds: 800), () {
-                        Navigator.of(context).pop();
-                      });
-                    } catch (e) {
-                      await GlobalFunction.showToast(
-                          message: e.toString(), toastType: ToastType.Error);
-                    }
-                    context.read(globalLoading).state = false;
-                  },
+                  onPressed: () async => await RequestFunction.addProduct(
+                    context,
+                    idProduct: widget.idProduct,
+                    formKey: _formKey,
+                    nameTextController: nameTextController,
+                    priceTextController: priceTextController,
+                    stockTextController: stockTextController,
+                    summaryTextController: summaryTextController,
+                    descriptionTextController: descriptionTextController,
+                    imageBase64: _imageBase64,
+                  ),
                   buttonTitle: 'Simpan',
                 ),
               ),
