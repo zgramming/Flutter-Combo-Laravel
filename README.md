@@ -1,7 +1,9 @@
 # Combo Flutter & Laravel 
 
 <p align="center">
-
+   <img src="https://github.com/zgramming/Flutter-Combo-Laravel/blob/main/screenshot/gif/login_register.gif" alt="Databay showcase gif" title="Databay showcase gif" width="250"/>
+   <img src="https://github.com/zgramming/Flutter-Combo-Laravel/blob/main/screenshot/gif/form_product.gif" alt="Databay showcase gif" title="Databay showcase gif" width="250"/>
+    <img src="https://github.com/zgramming/Flutter-Combo-Laravel/blob/main/screenshot/gif/detail_product.gif" alt="Databay showcase gif" title="Databay showcase gif" width="250"/>
 </p>
 
 Example flutter application to consume REST API from laravel back-end
