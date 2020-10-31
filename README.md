@@ -14,7 +14,7 @@ Example flutter application to consume REST API from laravel back-end
 
 What's mean ? I make separated packages to make flutter application faster. Inside it include:
 
-* Template **Login**
+* Template **Login** and **Splash Screen**
 * Reusable Widget
 * Function
 * Color Pallete
