@@ -26,6 +26,9 @@ class DrawerSide extends StatelessWidget {
               child: Consumer(
                 builder: (context, watch, _) {
                   final user = watch(userProvider.state);
+                  if (user.idUser == null) {
+                    return SizedBox();
+                  }
                   return UserAccountsDrawerHeader(
                     currentAccountPicture: InkWell(
                       onTap: () {
