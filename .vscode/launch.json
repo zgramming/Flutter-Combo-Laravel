@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "combo_rest_api_laravel",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "global_template",
+            "cwd": "global_template",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
