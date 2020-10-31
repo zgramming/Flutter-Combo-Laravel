@@ -10,6 +10,20 @@ Example flutter application to consume REST API from laravel back-end
 
 ## What's in here ?
 
+### Template 
+
+What's mean ? I make separated packages to make flutter application faster. Inside it include:
+
+* Template **Login**
+* Reusable Widget
+* Function
+* Color Pallete
+* App Config
+* Sizes
+* and many more...
+
+If you interested with this, you can follow this <a href="https://github.com/zgramming/Global-Template" target="_blank">link</a>
+
 ### State management 
 State management in this application used <a href="https://riverpod.dev/" target="_blank">Flutter Riverpod</a> . If you familiar with <a href="https://pub.dev/packages/provider" target="_blank">Provider</a> ,i think you might will like it because riverpod <a href="https://github.com/rrousselGit" target="_blank">author</a> is same and have improvement from provider.
 Because this package is new and still a little tutorial on this package , i think what i write in this application not yet best practice. If you have suggestion , feel free to discussion. 
