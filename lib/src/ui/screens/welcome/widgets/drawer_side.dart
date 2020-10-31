@@ -26,8 +26,17 @@ class DrawerSide extends StatelessWidget {
               child: Consumer(
                 builder: (context, watch, _) {
                   final user = watch(userProvider.state);
+                  Widget image;
                   if (user.idUser == null) {
                     return SizedBox();
+                  }
+                  if (user.imageUser == null) {
+                    image = ShowImageAsset(
+                      imageUrl: appConfig.urlImageAsset + '/' + 'drawer_background.png',
+                      imageSize: 10,
+                      isCircle: true,
+                      fit: BoxFit.cover,
+                    );
                   }
                   return UserAccountsDrawerHeader(
                     currentAccountPicture: InkWell(
@@ -62,12 +71,14 @@ class DrawerSide extends StatelessWidget {
                           },
                         );
                       },
-                      child: ShowImageNetwork(
-                        imageSize: 10,
-                        isCircle: true,
-                        imageUrl: appConfig.baseImageURL + '/user/' + user.imageUser,
-                        fit: BoxFit.cover,
-                      ),
+                      child: user.imageUser == null
+                          ? image
+                          : ShowImageNetwork(
+                              imageSize: 10,
+                              isCircle: true,
+                              fit: BoxFit.cover,
+                              imageUrl: appConfig.baseImageURL + '/user/' + user.imageUser,
+                            ),
                     ),
                     accountName: Text('${user.nameUser}'),
                     accountEmail: Text('${user.emailUser}'),
