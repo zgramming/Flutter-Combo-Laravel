@@ -91,6 +91,15 @@ Because this application have a goal how to consume REST API from laravel back-e
 * Show detail product
 * Show dialog loading while request to server (It's nice to prevent user to action while request to server)
 
+## Download
+
+If you want try this application, you can download in available link below.
+
+|app-arm64-v8a|app-armeabi-v7a|app-x86_64|
+|:-----------:|:-------------:|:--------:|
+|[<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/APK_format_icon.png" width="50px">](https://github.com/zgramming/Flutter-Combo-Laravel/blob/main/apk/app-arm64-v8a-release.apk)|[<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/APK_format_icon.png" width="50px">](https://github.com/zgramming/Flutter-Combo-Laravel/blob/main/apk/app-armeabi-v7a-release.apk)|[<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/APK_format_icon.png" width="50px">](https://github.com/zgramming/Flutter-Combo-Laravel/blob/main/apk/app-x86_64-release.apk)|
+|7,1 MB|6,8 MB|7,2 MB|
+
 ## Issues
 
 Please file any issues, bugs or feature request as an issue on <a href="https://github.com/zgramming/Peduli-Tugas/issues"><b> Github </b></a>
