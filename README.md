@@ -10,6 +10,10 @@ Example flutter application to consume REST API from laravel back-end
 
 ## What's in here ?
 
+### REST API Laravel
+
+If you are interested in this REST API and want to customize it, you can follow this <a href="https://github.com/zgramming/REST-API-COMBO-LARAVEL">link</a>. This application used REST API in that link.
+
 ### Template 
 
 What's mean ? I make separated packages to make flutter application faster. Inside it include:
