@@ -12,7 +12,7 @@ abstract class UserModel with _$UserModel {
     String passwordUser,
     String emailUser,
     String imageUser,
-    String statusUser,
+    int statusUser,
     DateTime createdAt,
     DateTime updatedAt,
   }) = _UserModel;

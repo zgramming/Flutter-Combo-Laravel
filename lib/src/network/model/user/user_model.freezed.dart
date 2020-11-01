@@ -23,7 +23,7 @@ class _$UserModelTearOff {
       String passwordUser,
       String emailUser,
       String imageUser,
-      String statusUser,
+      int statusUser,
       DateTime createdAt,
       DateTime updatedAt}) {
     return _UserModel(
@@ -55,7 +55,7 @@ mixin _$UserModel {
   String get passwordUser;
   String get emailUser;
   String get imageUser;
-  String get statusUser;
+  int get statusUser;
   DateTime get createdAt;
   DateTime get updatedAt;
 
@@ -73,7 +73,7 @@ abstract class $UserModelCopyWith<$Res> {
       String passwordUser,
       String emailUser,
       String imageUser,
-      String statusUser,
+      int statusUser,
       DateTime createdAt,
       DateTime updatedAt});
 }
@@ -105,8 +105,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
           : passwordUser as String,
       emailUser: emailUser == freezed ? _value.emailUser : emailUser as String,
       imageUser: imageUser == freezed ? _value.imageUser : imageUser as String,
-      statusUser:
-          statusUser == freezed ? _value.statusUser : statusUser as String,
+      statusUser: statusUser == freezed ? _value.statusUser : statusUser as int,
       createdAt:
           createdAt == freezed ? _value.createdAt : createdAt as DateTime,
       updatedAt:
@@ -127,7 +126,7 @@ abstract class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       String passwordUser,
       String emailUser,
       String imageUser,
-      String statusUser,
+      int statusUser,
       DateTime createdAt,
       DateTime updatedAt});
 }
@@ -160,8 +159,7 @@ class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
           : passwordUser as String,
       emailUser: emailUser == freezed ? _value.emailUser : emailUser as String,
       imageUser: imageUser == freezed ? _value.imageUser : imageUser as String,
-      statusUser:
-          statusUser == freezed ? _value.statusUser : statusUser as String,
+      statusUser: statusUser == freezed ? _value.statusUser : statusUser as int,
       createdAt:
           createdAt == freezed ? _value.createdAt : createdAt as DateTime,
       updatedAt:
@@ -198,7 +196,7 @@ class _$_UserModel implements _UserModel {
   @override
   final String imageUser;
   @override
-  final String statusUser;
+  final int statusUser;
   @override
   final DateTime createdAt;
   @override
@@ -267,7 +265,7 @@ abstract class _UserModel implements UserModel {
       String passwordUser,
       String emailUser,
       String imageUser,
-      String statusUser,
+      int statusUser,
       DateTime createdAt,
       DateTime updatedAt}) = _$_UserModel;
 
@@ -285,7 +283,7 @@ abstract class _UserModel implements UserModel {
   @override
   String get imageUser;
   @override
-  String get statusUser;
+  int get statusUser;
   @override
   DateTime get createdAt;
   @override
