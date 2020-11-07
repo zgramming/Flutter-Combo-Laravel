@@ -102,7 +102,7 @@ If you want try this application, you can download in available link below.
 
 ## Issues
 
-Please file any issues, bugs or feature request as an issue on <a href="https://github.com/zgramming/Peduli-Tugas/issues"><b> Github </b></a>
+Please file any issues, bugs or feature request as an issue on <a href="https://github.com/zgramming/Flutter-Combo-Laravel/issues"><b> Github </b></a>
 
 ## Contributing
 
